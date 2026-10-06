@@ -1,12 +1,4 @@
-"""Ping your phone when a new quant internship appears in SimplifyJobs/Summer2027-Internships.
 
-Setup:
-  1. Install the free ntfy app on your phone and subscribe to a long random topic name.
-  2. Set NTFY_TOPIC (env var) to that topic name.
-  3. Run on a schedule (cron, or the GitHub Actions workflow in this folder).
-
-First run only records what exists (no notifications), so you are not spammed.
-"""
 import json
 import os
 import urllib.request
@@ -14,7 +6,7 @@ import urllib.request
 SRC = ("https://raw.githubusercontent.com/SimplifyJobs/"
        "Summer2027-Internships/dev/.github/scripts/listings.json")
 STATE = "seen_ids.json"
-TOPIC = os.environ["sbjobtopicqi"]
+TOPIC = os.environ["NTFY_TOPIC"]
 TERM = "Summer 2027"
 CATEGORIES = {"Quant", "Quantitative Finance"}
 
